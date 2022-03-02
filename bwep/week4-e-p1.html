@@ -54,16 +54,17 @@ DO NOT CHANGE THE values of the NAME attributes in each element!!!
 <input type="file" name="selfie"><br>	
 
 <h3>Try the \W pattern! write your finding in self reflection</h3>
-<input type="text" pattern="\W{3,}" name="W-sample"><br> <!-- not a-z, A-Z, 0-9 -->
+<input type="text" pattern="\W{3,}" name="W-sample"><br> 
 <h3>Try the \D pattern! write your finding in self reflection</h3>
-<input type="text" pattern="\D{3,}" name="D-sample"><br> <!-- all except 0-9 --> 
+<input type="text" pattern="\D{3,}" name="D-sample"><br> 
 
 <!-- WRITE THE REQUIRED PATTERN -->
 <h3>Last but not least.. Enter a sentence, mininum 10 characters and maximum 30 characters. Allow: numbers, alphabet lowercase & uppercase, spaces and question mark</h3>
-<input type="text" pattern="[a-zA-Z0-9?\s]{10,30}" name="wsdot-sample" size="30"><br>
+<input type="text" pattern="[0-9a-zA-Z?\s]{10,30}" name="wsdot-sample" size="30"><br>
 
 <!-- so what's hidden? write your finding in reflection -->
-<input type="hidden" value="bwep2022"> <!-- The term "hidden" refers to the information that has been removed from a homepage because it is no longer relevant. -->
+<input type="hidden" value="bwep2022">
+
 <p><input type="submit" value="Submit Query"></p>
 </form>
 </body>
