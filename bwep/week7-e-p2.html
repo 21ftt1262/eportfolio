@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 7 ePortfolio part 2</title>
+	<style type="text/css">
+
+
+		textarea{width: 340px;}
+		#flex-container{
+			display: flex;
+			flex-direction: column;
+			border: 1px solid;
+			border: transparent;
+			width: 600px;
+			margin: auto;
+
+		}
+		.column{
+			display: flex;
+			padding: 5px;
+			width: 400px;
+		}
+		.center{
+			justify-content: center;
+			padding: 8px;
+		}
+
+		.padding{padding-top: 5px;}
+
+		.flex-grow{display: flex; flex-direction: column; flex-grow: 1; padding-top: 4px;}
+
+		#flex-container>div{
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		input[type="radio"]{margin: 0;}
+
+		input[type="range"]{width: 150px;}
+
+		div:nth-child(11){padding: 18px}
+
+	</style>
+</head>
+<body>
+<form method="" action="">
+<div id="flex-container">
+	<div>
+	<div class="column"><label for="fullname">Fullname</label></div>
+	<div class="flex-grow"><input type="text" name="fullname" id="fullname" maxlength="30"></div>
+	</div>
+	<div>
+	<div class="column"><label for="email">Email</label></div>
+	<div class="flex-grow"><input type="email" name="email" id="email"></div>
+	</div>
+	<div>
+	<div class="column"><label for="date">Date you can start</label></div>
+	<div class="flex-grow"><input type="date" name="date" id="date"></div>
+	</div>
+	<div>
+	<div class="column"><label for="time">Morning shift preference</label></div>
+	<div class="flex-grow"><input type="time" id="time" name="time"></div>
+	</div>
+	<div>
+	<div class="column"><label for="time">Evening shift perference</label></div>
+	<div class="flex-grow"><input type="time" id="time" name="time"></div>
+	</div>
+	<div>
+	<div class="column"><label for="number">How many hours you can work?In multiple of 3</label></div>
+	<div class="flex-grow"><input type="number" id="number" name="number" min="3" max="9" step="3"></div>
+	</div>
+	<div>
+	<div class="column"><label>Distance you willing to commute to volunteer center?</label></div>
+	<div class="padding">1<input type="range" min="1" value="3" max="15">15</div>
+	</div>
+	<div>
+	<div class="column"><label>You currency perference for payment?</label></div>
+	<div class="padding"><input type="radio" name="currency" id="pound">
+	<label for="pound">&#163;</label>
+	<input type="radio" name="currency" id="yen">
+	<label for="yen">&#165;</label>
+	<input type="radio" name="currency" id="euro">
+	<label for="euro">&#128;</label></div>
+	</div>
+	<div class="center">
+	<div><textarea name="address" id="address" rows="6" cols="40" placeholder="Type your home address"></textarea></div>
+	</div>
+	<div class="center">
+	<div><label><s>You will be given daily meals</s></label></div>
+	</div>
+	<div class="center">
+	<div><input type="checkbox" disabled checked name="T&C" id="T&C"></div>
+	<div><label for="T&C">I agree to all terms and conditions</label></div>
+	</div>
+	<div class="center">
+	<div><label for="prove">Prove you are not robot: 10 &lt; 20&#63;</label></div>
+	<div><input type="checkbox" name="prove" id="prove"></div>
+	</div>
+	<div class="center">
+	<div><input type="submit" value="Volunteer now!"/></div>
+	</div>
+	<div class="center">
+	<div><input type="reset" value="Start over"/></div>
+	</div>
+	<div class="center">
+	<div><label>For more informaton, visit MOH <a href="https://www.moh.gov.bn/">website</a></label></div>
+	</div>
+</div>
+</form>
+</body>
+</html>
