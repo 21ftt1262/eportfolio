@@ -1,0 +1,193 @@
+<html !DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week9-e</title>
+
+  <style type="text/css">
+    
+/*
+    THIS TASK REQUIRE YOU TO USE CSS GRID AND THEIR RELATED PROPERTIES
+  
+
+    /*ORGANIZE YOUR CSS IN THE FOLLOWING ORDER, IF APPLICABLE
+
+    1. ELEMENT SELECTOR
+    2. ID SELECTOR
+    3. CLASS SELECTOR
+    4. DESCENDENT SELECTOR
+    5. CHILD SELECTOR
+    6. SIBLING SELECTOR
+    7. ATTRIBUTE SELECTOR
+    8. PSEUDO CLASS SELECTOR
+
+    FAILURE TO COMPLY WILL RESULTS IN MARK DEDUCTION*/
+
+    .main{
+      display: grid;
+      grid-gap: 2em;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .submain>div:nth-child(1){
+      background-color: lightseagreen;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .submain>div:nth-child(2){
+      background-color: skyblue;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 800px){
+    .main{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 150px);
+    }
+    .submain{
+      display: grid;
+      font-size: 1em;
+    }
+    .spotlight{
+      grid-column: 2 / span 3;
+    }
+    .submain>div:nth-child(2){
+      padding: 25px 0;
+    }
+    .spotlight>div:nth-child(2){
+      padding: 35px 0;
+    }
+    .col>div:nth-child(1){
+      padding: 8px 0;
+    }
+    .spotlight>div:nth-child(1){
+      padding: 10px 0;
+    }
+    .col:nth-child(4){
+      padding: 0;
+    }
+    .submain>div:nth-child(1){ 
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .main>div:nth-child(2){
+      grid-row-start:: 1;
+      grid-row-end: 2;
+    }
+    .main>div:nth-child(6){
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .main>div:nth-child(7){
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    .main>div:nth-child(8){
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+  }
+
+  @media screen and (max-width: 799px){
+    .main{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .submain{
+      font-size: 1.25em;
+    }
+    .submain>div:nth-child(1), .submain>div:nth-child(2){
+      padding: 10px;
+    }
+    .main>div:nth-child(3), .main>div:nth-child(5){
+      background-color: skyblue;
+    }
+    .main>div:nth-child(1), .main>div:nth-child(2), .main>div:nth-child(7), .main>div:nth-child(8){
+      grid-column: 1 / span 2;
+    }
+  }
+
+   @media screen and (max-width: 480px){
+      .main{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 0;
+       }
+       .submain{
+        font: 1.5em;
+       }
+       .submain>div:nth-child(1){
+        grid-row: 2em;
+       }
+       .submain>div:nth-child(2){
+        grid-row: auto;
+       }
+       .submain>div:nth-child(1), .submain>div:nth-child(2){
+        padding: 10px;
+       }
+       .main>div:nth-child(3), .main>div:nth-child(4), .main>div:nth-child(5){
+        grid-column-start: 1;
+        grid-column-end: 3;
+       }
+  }
+  </style>
+</head>
+<body>
+  <!-- INSTRUCTIONS
+    YOU ARE NOT ALLOWED TO CHANGE ANY PART OF THE HTLM CODES (SUCH AS ADDING ID attributes or additional values to the classes atributes.) 
+  
+    YOUR TASK IS TO WRITE THE CSS CODE TO ACHIEVE THE REQUIRED OUTPUT-->
+<div class="main">
+  
+<div class="submain spotlight">
+  <div>Mark Twain</div>
+  <div>The man who does not read books has no advantage over the one who cannot read them.</div>
+</div>
+<div class="submain col">
+  <div>Mason Cooley</div>
+  <div>Procrastination makes easy things hard and hard things harder.</div>
+</div>
+<div class="submain col">
+  <div>Albert Einstein</div>
+  <div>
+A person who never made a mistake never tried anything new.</div>
+</div>
+<div class="submain col">
+  <div>Elon Musk</div>
+  <div>
+I think it’s possible to ordinary people to choose to be extraordinary.</div>
+</div>
+
+<div class="submain col">
+  <div>Jim Ryun</div>
+  <div>
+Motivation is what gets you started. Habit is what keeps you going.</div>
+</div>
+
+<div class="submain spotlight">
+  <div>Dr. Seuss</div>
+  <div>
+The more that you read, the more things you will know, the more that you learn, the more places you’ll go.</div>
+</div>
+
+<div class="submain spotlight">
+  <div>Chinese Proverb</div>
+  <div>
+He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.</div>
+</div>
+
+<div class="submain spotlight">
+  <div>Martin Luther king</div>
+  <div>
+If you can’t fly, then run. If you can’t run, then walk. If you can’t walk, then crawl. But by all means, keep moving</div>
+</div>
+
+
+</div>
+</body>
+</html>
