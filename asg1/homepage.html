@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Meow Script|Archivo">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+
+    h2{font-family: Archivo; text-align: center; font-size: 3em; padding-bottom: 8px;}
+
+    #container{
+      display: grid;
+      grid-template-columns: 20% 50%;
+      grid-auto-rows: 35% 16% 23% 16% 18%;
+      grid-gap: 1em;
+    }
+
+    #banner{
+        text-align: center;
+        padding: 8% 0;
+    }
+
+    #bannerimg{
+        background-image: url("images/banner.jpg");
+        background-size: cover;
+    }
+
+    #banner h1{
+        font-family: "Meow Script";
+        font-size: 6em;
+    }
+
+    #banner p{
+        font-family: Archivo;
+        font-size: 3em;
+    }
+
+    #container>div {
+      background-color: lightsteelblue;
+      padding: 10px;
+    }
+
+    img[src*="logo"]{
+      width: 130px; 
+      height: 130px;
+      display: block;
+      padding: 8px 0;
+      margin: auto;
+    }
+
+    #container>div:nth-child(1){grid-column: 1 / span 4;}
+    #container>div:nth-child(3){grid-column: 2 / span 3;}
+    #container>div:nth-child(4){grid-column: span 4;}
+    #container>div:nth-child(5), #container>div:nth-child(6){grid-column: 1 / span 4;}
+  
+    /*partners and sponsors*/
+
+    .sponsor{
+        width: 100%;
+        height: 200px;
+    }
+
+    .data_preview_area {
+        margin:0.5rem 0;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+    .data_preview_frame {
+      width:calc(100% / 5);
+      display:inline-block;
+    }
+
+    
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div class="jumbotron jumbotron-fluid" id="bannerimg">
+      <div class="container" id="banner">
+        <h1>Brunei December Festival</h1>      
+        <p>Stay tuned for BDF 2022!</p>
+      </div>
+    </div>
+    <div><img src="images/logo2.png"><img src="images/logo1.png"></div>
+    <div><h1>Don't miss out the fun!</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><b>#InBrunei #BDF2022 #DiscoverBrunei</b></div>
+    <div class="testimonial-section">
+    <h2>Organising Committees</h2>
+    <div class="testimonial-pic">
+      <img src="images/c1.jpg" data-alt="tab1">
+      <img src="images/c2.jpg" data-alt="tab2">
+      <img src="images/c3.jpg" data-alt="tab3">
+      <img src="images/c4.jpg" data-alt="tab4">
+      <img src="images/c5.jpg" data-alt="tab5">
+    </div>
+    <div class="testimonial">
+    <div class="content active" id="tab1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>James</p>
+    </div>
+    <div class="content" id="tab2">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Mary</p>
+    </div>
+    <div class="content" id="tab3">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Robert</p>
+    </div>
+    <div class="content" id="tab4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Jennifer</p>
+    </div>
+    <div class="content" id="tab5">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Patricia</p>
+    </div>
+  </div>
+</div>
+    <div><h2>Latest Feedback</h2>
+    <div id="bs4-multi-slide-carousel" class="carousel slide" data-ride="carousel" >
+      <div class="carousel-inner">
+
+        <div class="carousel-item active"><!-- to make the image move -->
+               <div class="row">
+                   <div class="col"><img src="images/f1.jpg" class="img-fluid" alt="1 slide"></div>
+                   <div class="col"><img src="images/f2.jpg" class="img-fluid" alt="2 slide"></div>
+                   <div class="col"><img src="images/f3.jpg" class="img-fluid" alt="3 slide"></div>
+               </div>
+        </div>
+        <div class="carousel-item">
+               <div class="row">
+                   <div class="col"><img src="images/f5.jpg" class="img-fluid" alt="1 slide"></div>
+                   <div class="col"><img src="images/f4.jpg" class="img-fluid" alt="2 slide"></div>
+                   <div class="col"><img src="images/f6.jpg" class="img-fluid" alt="3 slide"></div>
+               </div>
+        </div>
+        <div class="carousel-item">
+               <div class="row">
+                   <div class="col"><img src="images/f9.jpg" class="img-fluid" alt="1 slide"></div>
+                   <div class="col"><img src="images/f7.jpg" class="img-fluid" alt="2 slide"></div>
+                   <div class="col"><img src="images/f8.jpg" class="img-fluid" alt="3 slide"></div>
+               </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div><h2>Partners and sponsors</h2>
+    <div class="preview_control_area">
+      <div class="data_preview_area">
+        <div class="data_preview_frame"><img src="images/kfc.jpg" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/jolly.jpg" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/mcd.jpg" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/pepsi.png" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/coca.jpg" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/gc.jpg" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/bk.png" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/subs.jpg" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/brew.png" class="sponsor"></div>
+        <div class="data_preview_frame"><img src="images/excapade.jpg" class="sponsor"></div>
+      </div>
+    </div>
+</div>
+  
+<script type="text/javascript">
+    $('.testimonial-pic img').click(function () {
+
+    $(this).addClass('active')
+    $(this).siblings().removeClass('active')
+
+    $('.testimonial .content').removeClass('active')
+    $('#' + $(this).attr('data-alt')).addClass('active')
+})
+    $('#bs4-multi-slide-carousel').carousel({
+      interval: 2000
+})
+</script>
+</body>
+</html>
