@@ -25,6 +25,10 @@
   	<script src="liquo.min.js"></script>
 
 
+  	<!-- Scroller -->
+
+  	<!-- <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
+
 	<style type="text/css">
   
     /*Partners and Sponsors*/
@@ -63,10 +67,11 @@
     .liquo-active { font-weight: bold; }
 
     .eventbtn{
-      background-color: darkgray;
+      background-color: steelblue;
       border-radius: 5px;
       padding: 5px;
       margin-bottom: 10px;
+      margin: 5px 8px;
       text-decoration: none;
       color: black;
       font-family: 'courier new';
@@ -74,7 +79,6 @@
     .event{
       width: 132px;
       height: 140px;
-      /*margin-left: 5px;*/
       margin-top: 20px;
     }
 
@@ -102,7 +106,7 @@
     .grid1 p{
         font-family: monospace;
         font-size: 3em;
-        margin-top: 7%;
+        margin-top: 6%;
     }
 
     #container>div {
@@ -121,7 +125,7 @@
     	height: 100vh;
     	display: grid;
     	grid-template-columns: 100%;
-    	grid-auto-rows: auto;
+    	grid-template-rows: 3fr repeat(5, auto);
     	grid-row-gap: 1em;
     }
 
@@ -169,14 +173,20 @@
     	grid-row-gap: 1em;
     }
 
-/*    .grid1{
-
-    }*/
-
     .grid2{
+    	display: grid;
+    	grid-template-columns: 100%;
+    	grid-auto-rows: auto;
+    }
+
+    .grid2>div:nth-child(1){
+    	grid-row: 2 / 3;
+    	grid-column: 1 / 1;
+    }
+
+    .grid2>div:nth-child(3){
     	grid-row: 3 / 4;
     	grid-column: 1 / 1;
-    	grid-gap: 0;
     }
 
    }
