@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Feedback</title>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css'>
+
+	<style type="text/css">
+
+	.form-body {
+	    font-weight: 400;
+	    -webkit-font-smoothing: antialiased;
+	    text-rendering: optimizeLegibility;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+ 
+	html,
+	body {
+	   height: 100%;
+	   background-color: white;
+	   overflow-x: hidden;
+	   padding: 10px;
+	}
+ 
+	.form-holder {
+	   display: flex;
+	   flex-direction: column;
+	   justify-content: center;
+	   align-items: center;
+	   text-align: center;
+	   min-height: 100vh;
+	}
+ 
+	.form-holder .form-content {
+	    position: relative;
+	    text-align: center;
+	    display: -webkit-box;
+	    display: -moz-box;
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-justify-content: center;
+	    justify-content: center;
+	    -webkit-align-items: center;
+	    align-items: center;
+	    padding: 60px;
+	}
+	 
+	.form-content .form-items {
+	    background-color: #99badd;
+	    padding: 40px;
+	    display: inline-block;
+	    width: 100%;
+	    min-width: 540px;
+	    -webkit-border-radius: 10px;
+	    -moz-border-radius: 10px;
+	    border-radius: 10px;
+	    text-align: left;
+	    -webkit-transition: all 0.4s ease;
+	    transition: all 0.4s ease;
+	}
+	 
+	.form-content h3 {
+	    color: black;
+	    text-align: left;
+	    font-size: 28px;
+	    font-weight: 600;
+	    margin-bottom: 5px;
+	}
+	 
+	.form-content h3.form-title {
+	    margin-bottom: 30px;
+	}
+	 
+	.form-content p {
+	    color: black;
+	    text-align: left;
+	    font-size: 17px;
+	    font-weight: 300;
+	    line-height: 20px;
+	    margin-bottom: 30px;
+	}
+	 
+	.form-content label,
+	.was-validated .form-check-input:invalid~.form-check-label,
+	.was-validated .form-check-input:valid~.form-check-label {
+	    color: black;
+	}
+	 
+	.form-content input[type=text],
+	.form-content input[type=password],
+	.form-content input[type=email],
+	.form-content select {
+	    width: 100%;
+	    padding: 9px 20px;
+	    text-align: left;
+	    border: 0;
+	    outline: 0;
+	    border-radius: 6px;
+	    background-color: #fff;
+	    font-size: 15px;
+	    font-weight: 300;
+	    color: black;
+	    -webkit-transition: all 0.3s ease;
+	    transition: all 0.3s ease;
+	    margin-top: 16px;
+	}
+	 
+	.btn-primary {
+	    background-color: #6C757D;
+	    outline: none;
+	    border: 0px;
+	    box-shadow: none;
+	}
+	 
+	.btn-primary:hover,
+	.btn-primary:focus,
+	.btn-primary:active {
+	    background-color: #495056;
+	    outline: none !important;
+	    border: none !important;
+	    box-shadow: none;
+	}
+	 
+	.form-content textarea {
+	    position: static !important;
+	    width: 100%;
+	    padding: 8px 20px;
+	    border-radius: 6px;
+	    text-align: left;
+	    background-color: #fff;
+	    border: 0;
+	    font-size: 15px;
+	    font-weight: 300;
+	    color: #0000;
+	    outline: none;
+	    resize: none;
+	    height: 120px;
+	    -webkit-transition: none;
+	    transition: none;
+	    margin-bottom: 14px;
+	}
+	 
+	.form-content textarea:hover,
+	.form-content textarea:focus {
+	    border: 0;
+	    background-color: #ebeff8;
+	    color: #8D8D8D;
+	}
+	 
+	.mv-up {
+	    margin-top: -9px !important;
+	    margin-bottom: 8px !important;
+	}
+	 
+	.invalid-feedback {
+	    color: #ff606e;
+	}
+	 
+	.valid-feedback {
+	    color: #2acc80;
+	}
+
+	#feed{background-color: #bcd4e6; padding: 8px; text-align: center; margin-top: 20px;}
+ 
+	.email{
+		margin-top: -15px;
+	}
+
+	.reset{
+		padding-left: 30px;
+	}
+
+	#button{
+		margin-top: -20px;	
+	}
+
+	.date{margin-top: 20px;}
+
+	footer{background-color: #bcd4e6; padding: 10px; text-align: center;}
+
+    /*nav*/
+
+	.navbar {
+		display: grid;
+		grid-template-columns: repeat(5,20%);
+	}
+
+	.nav-header {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		background-color: #4682b4;
+	}
+
+	.pill-nav a {
+		display: inline-block;
+		color: white;
+		text-align: center;
+		padding: 10px;
+		text-decoration: none;
+		font-size: 17px;
+		border-radius: 5px;
+		background-color: #bcd4e6;
+		margin-left: 15px;
+	}
+
+	.pill-nav a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="nav-header">
+		<center><div><img src="Images/logo.png" width="350px"></div></center>
+		<div class="pill-nav navbar">
+			<a href="home.html">Home</a>
+			<a href="listofevents.html">List of events</a>
+			<a href="#contact">Gallery</a>
+			<a href="interestingplaces.html">Interesting Places</a>
+			<a href="feedback.html">Feedback</a>
+		</div>
+	</div>
+
+	<div id="feed"><h1>Feedback Form</h1></div>
+
+	<div class="form-body">
+	   <div class="row">
+	      <div class="form-holder">
+	         <div class="form-content">
+	            <div class="form-items">
+	               <h3>Feedback Form</h3>
+	               <p>Please take the time to fill out this form.</p>
+	               <form class="requires-validation" novalidate>
+	                  <div class="col-md-12">
+	                     <input class="form-control" type="text" name="name" placeholder="Name" pattern="[a-zA-Z@\s]{10,30}" required>
+	                     <div class="valid-feedback">Name field is valid!</div>
+	                     <div class="invalid-feedback">Name field cannot be blank!</div>
+	                  </div>
+	                  <div class="col-md-12 mt-3">
+	                     <label class="mb-3 mr-1" for="gender">Gender: </label>
+	                     <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+	                     <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+	                     <div class="valid-feedback mv-up">You selected a gender!</div>
+	                     <div class="invalid-feedback mv-up">Please select a gender!</div>
+	                  </div>
+	                  <div class="col-md-12 email">
+	                     <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+	                     <div class="valid-feedback">Email field is valid!</div>
+	                     <div class="invalid-feedback">Email field cannot be blank!</div>
+	                  </div>
+	                  <div class="col-md-12 date">
+	                     <input class="form-control" type="date" name="date" placeholder="Event Date" required>
+	                     <div class="valid-feedback">Date field is valid!</div>
+	                     <div class="invalid-feedback">Date field cannot be blank!</div>
+	                  </div>                  
+	                  <div class="col-md-12">
+	                     <select class="form-select mt-3" required>
+	                        <option selected disabled value="">Where does the event take place?</option>
+	                        <option value="brunei-muara">Brunei Muara</option>
+	                        <option value="belait">Belait</option>
+	                        <option value="tutong">Tutong</option>
+	                        <option value="temb">Temburong</option>
+	                     </select>
+	                     <div class="valid-feedback">You've selected a place!</div>
+	                     <div class="invalid-feedback">Please select a district!</div>
+	                  </div>
+	                  <div class="col-md-12 mt-3">
+	                     <label class="mb-3 mr-1" for="rate">How would you rate your experience: </label>
+	                     <input type="radio" class="btn-check" name="rate" id="notsatisfied" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="notsatisfied">Not satisfied &#x1F44E;</label>
+	                     <input type="radio" class="btn-check" name="rate" id="neutral" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="neutral">Neutral &#128076;</label>
+	                     <input type="radio" class="btn-check" name="rate" id="satisfied" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="satisfied">Satisfied &#128077;</label>
+	                     <div class="valid-feedback mv-up">You've made your decision.</div>
+	                     <div class="invalid-feedback mv-up">Please select an option!</div>
+	                  </div>
+	                  <div class="col-md-12">
+	      				 <textarea class="form-control" rows="5" id="text" name="text" placeholder="Please tell us about your experience" required></textarea>
+	                     <div class="valid-feedback">Feedback field is valid!</div>
+	                     <div class="invalid-feedback">Feedback field cannot be blank!</div>
+	                  </div>
+	                  <div class="col-md-12 mt-3">
+	                     <label class="mb-3 mr-1" for="visit">Would you visit again: </label>
+	                     <input type="radio" class="btn-check" name="visit" id="no" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="no">No</label>
+	                     <input type="radio" class="btn-check" name="visit" id="maybe" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="maybe">Maybe</label>
+	                     <input type="radio" class="btn-check" name="visit" id="yes" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="yes">Yes</label>
+	                     <div class="valid-feedback mv-up">You've made your decision.</div>
+	                     <div class="invalid-feedback mv-up">Please select an option!</div>
+	                  </div>
+	                  <div id="button"><div class="col-md-12 mt-3" id="button">
+	                     <label class="mb-3 mr-1" for="recommend">Do you think you'd recommend these to your friends?</label>
+								<input type="radio" class="btn-check" name="recommend" id="nope" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="nope">Nope</label>
+	                     <input type="radio" class="btn-check" name="recommend" id="partially" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="partially">Partially</label>
+	                     <input type="radio" class="btn-check" name="recommend" id="absoulutely" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="absoulutely">Absoulutely</label>
+	                     <div class="valid-feedback mv-up">You've made your decision.</div>
+	                     <div class="invalid-feedback mv-up">Please select an option!</div>
+	                  </div>
+	                  </div>
+	                  <div id="button"><div class="col-md-12 mt-3" id="button">
+	                     <label class="mb-3 mr-1" for="recommend">Overall Satisfaction</label>
+								<input type="radio" class="btn-check" name="overall" id="one" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="one">&#11088;</label>
+	                     <input type="radio" class="btn-check" name="overall" id="two" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="two">&#11088; &#11088;</label>
+	                     <input type="radio" class="btn-check" name="overall" id="three" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="three">&#11088; &#11088; &#11088;</label>
+	                     <input type="radio" class="btn-check" name="overall" id="four" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="four">&#11088; &#11088; &#11088; &#11088;</label>
+	                     <input type="radio" class="btn-check" name="overall" id="five" autocomplete="off" required>
+	                     <label class="btn btn-sm btn-outline-secondary" for="five">&#11088; &#11088; &#11088; &#11088; &#11088;</label>
+	                     <div class="valid-feedback mv-up">You've made your decision.</div>
+	                     <div class="invalid-feedback mv-up">Please select an option!</div>
+	                  </div>
+	                  </div>
+	                  <div class="form-check">
+	                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+	                     <label class="form-check-label">I confirm that all information above is correct and accurate</label>
+	                     <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+	                  </div>
+	                  <div class="form-button mt-3">
+	                  	<button id="reset" type="reset" class="btn btn-primary">Clear</button>
+	                 <!-- Button to Open the Modal -->
+							   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#continue">
+							    Continue
+							   </button>
+
+							   <!-- The Modal -->
+							   <div class="modal" id="continue">
+							    <div class="modal-dialog">
+							      <div class="modal-content">
+							      
+							        <!-- Modal body -->
+							        <div class="modal-body">
+							        <h4><b>Confirmation</b></h4>
+									Please double-check that you've filled out the form completely. 
+							        </div>
+							        
+							        <!-- Modal footer -->
+							        <div class="modal-footer">
+							          <button type="button" class="btn btn-danger" data-dismiss="modal">Back</button>
+							          <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+							        </div>
+							      </div>
+							    </div>
+							  </div>
+						  </div>
+			           </form>
+			        </div>
+			    </div>
+			</div>
+		</div>
+										<div><footer>Copyright © 2022 Visit Brunei</footer></div>
+	</div>
+
+
+
+
+<script type="text/javascript">
+
+(function () {
+'use strict'
+const forms = document.querySelectorAll('.requires-validation')
+Array.from(forms)
+  .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+    }
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+</script>
+</body>
+</html>

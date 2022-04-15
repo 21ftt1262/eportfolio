@@ -5,29 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Landing Page</title>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Meow Script|Archivo"> 
+	<link href='https://fonts.googleapis.com/css?family=Meow Script' rel='stylesheet'> 
 
 	<!-- Feedback -->
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
-  	<!-- Organising Committees -->
+  <!-- Organising Committees -->
  
- 	<link rel="stylesheet" href="style.css">
-  	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 	<link rel="stylesheet" href="CSS/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  	<!-- Previous and Upcoming Events -->
+  <!-- Previous and Upcoming Events -->
 
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-  	<script src="liquo.min.js"></script>
-
-
-  	<!-- Scroller -->
-
-  	<!-- <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="JavaScript/liquo.min.js"></script>
 
 	<style type="text/css">
   
@@ -76,6 +71,7 @@
       color: black;
       font-family: 'courier new';
     }
+
     .event{
       width: 132px;
       height: 140px;
@@ -86,31 +82,23 @@
     	font-family: monospace;
     	text-align: center;
     	font-size: 3em;
-    	color: white;
+    	color: black;
     	padding-bottom: 8px;
     }
 
     .content1{padding: 50px 30px;}
 
-    .grid1{
-    	color: white;
-        text-align: center;
-    }
-
     .grid1 h1{
-        font-family: "Meow Script";
-        font-size: 6em;
-        margin-top: 30px;
-    }
-
-    .grid1 p{
-        font-family: monospace;
+        font-family: 'Meow Script';
         font-size: 3em;
-        margin-top: 6%;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 8px;
     }
 
     #container>div {
-      background-color: lightsteelblue;
+      background-color: #bcd4e6;
       padding: 10px;
     }
 
@@ -120,24 +108,27 @@
       padding: 10px 10px;
     }
 
+    /*desktop view*/
+
     .container1{
     	width: 100vw;
     	height: 100vh;
     	display: grid;
     	grid-template-columns: 100%;
-    	grid-template-rows: 3fr repeat(5, auto);
+    	grid-auto-rows: auto;
     	grid-row-gap: 1em;
+    	padding: 10px;
+
     }
 
     .grid1{
     	height: 50vh;
     	display: grid;
     	grid-template-columns: 100%;
-        background-image: url("images/banner.jpg");
-        background-size: 100% 150%;
+        background-image: url("images/banner1.png");
+        background-size: 100% 180%;
         background-repeat: no-repeat;
     }
-
 
     .grid2{
     	display: grid;
@@ -147,7 +138,7 @@
     }
 
     .grid2>div{
-    	background-color: lightsteelblue;
+    	background-color: #99badd;
     }
 
     .grid2>div:nth-child(3){
@@ -158,13 +149,21 @@
     .grid3, .grid4, .grid5, .grid6{
     	display: grid;
     	grid-template-columns: 100%;
-    	background-color: lightsteelblue;
+    	background-color: #99badd;
     	padding: 10px;
     }
 
-    .container1>div:nth-child(7){background-color: lightsteelblue; padding: 10px; text-align: center;}
+    .container1>div:nth-child(8){background-color: #bcd4e6; padding: 10px; text-align: center;}
+
+    /*mobile view*/
 
     @media screen and (max-width: 479px) {
+
+    .grid1 h1{
+        font-size: 2em;
+    }
+
+    .eventbtn{display: block; width: 55%;}
 
     .container1{
     	display: grid;
@@ -188,8 +187,37 @@
     	grid-row: 3 / 4;
     	grid-column: 1 / 1;
     }
-
    }
+
+    /*nav*/
+
+	.navbar {
+		display: grid;
+		grid-template-columns: repeat(5,20%);
+	}
+
+	.nav-header {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		background-color: #4682b4;
+	}
+
+	.pill-nav a {
+		display: inline-block;
+		color: white;
+		text-align: center;
+		padding: 10px;
+		text-decoration: none;
+		font-size: 17px;
+		border-radius: 5px;
+		background-color: #bcd4e6;
+		margin-left: 15px;
+	}
+
+	.pill-nav a:hover {
+		background-color: #ddd;
+		color: black;
+	}
 
 	</style>
 </head>
@@ -197,19 +225,29 @@
 
 <div class="container1">
 
+	<div class="nav-header">
+		<center><div><img src="Images/logo.png" width="350px"></div></center>
+		<div class="pill-nav navbar">
+			<a href="home.html">Home</a>
+			<a href="listofevents.html">List of events</a>
+			<a href="#contact">Gallery</a>
+			<a href="interestingplaces.html">Interesting Places</a>
+			<a href="feedback.html">Feedback</a>
+		</div>
+	</div>
+
 	<!-- Banner -->
 
 	<div class="grid1">
 		<h1>Brunei December Festival</h1>
-		<p>Stay tuned for BDF 2022!</p>
 	</div>
 	
 	<!-- Image and Content -->
 
 	<div class="grid2">
-		<div><img src="images/l1.jpg"></div>
+		<div><img src="Images/l1.jpg"></div>
 		
-		<div><img src="images/l2.jpg"></div>
+		<div><img src="Images/l2.jpg"></div>
 
 	    <div class="content1"><h1><b>Don't miss out the fun!</b></h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -233,15 +271,15 @@
 	      <a href="#" data-liquo="2" class="eventbtn">List of Upcoming Events</a>
 	    </div>
 	    <ul id="gallery">
-	      <li data-liquo="1"><img src="images/e1.png" class="event"></li>
-	      <li data-liquo="1"><img src="images/e2.jpg" class="event"></li>
-	      <li data-liquo="1"><img src="images/e3.jpg" class="event"></li>
-	      <li data-liquo="1"><img src="images/e4.jpg" class="event"></li>
-	      <li data-liquo="1"><img src="images/e9.jpg" class="event"></li>
-	      <li data-liquo="2"><img src="images/e5.jpeg" class="event"></li>
-	      <li data-liquo="2"><img src="images/e6.jpeg" class="event"></li>
-	      <li data-liquo="2"><img src="images/e7.jpg" class="event"></li>
-	      <li data-liquo="2"><img src="images/e8.jpg" class="event"></li>
+	      <li data-liquo="1"><img src="Images/e1.png" class="event"></li>
+	      <li data-liquo="1"><img src="Images/e2.jpg" class="event"></li>
+	      <li data-liquo="1"><img src="Images/e3.jpg" class="event"></li>
+	      <li data-liquo="1"><img src="Images/e4.jpg" class="event"></li>
+	      <li data-liquo="1"><img src="Images/e9.jpg" class="event"></li>
+	      <li data-liquo="2"><img src="Images/e5.jpeg" class="event"></li>
+	      <li data-liquo="2"><img src="Images/e6.jpeg" class="event"></li>
+	      <li data-liquo="2"><img src="Images/e7.jpg" class="event"></li>
+	      <li data-liquo="2"><img src="Images/e8.jpg" class="event"></li>
 	    </ul></div>
     </div>
 
@@ -252,11 +290,11 @@
 	    <div><h2>Organising Committees</h2>
 	    <div class="testimonial-section" id="committees">
 	    <div class="testimonial-pic">
-	      <img src="images/c1.jpg" data-alt="tab1">
-	      <img src="images/c2.jpg" data-alt="tab2">
-	      <img src="images/c3.jpg" data-alt="tab3">
-	      <img src="images/c4.jpg" data-alt="tab4">
-	      <img src="images/c5.jpg" data-alt="tab5">
+	      <img src="Images/c1.jpg" data-alt="tab1">
+	      <img src="Images/c2.jpg" data-alt="tab2">
+	      <img src="Images/c3.jpg" data-alt="tab3">
+	      <img src="Images/c4.jpg" data-alt="tab4">
+	      <img src="Images/c5.jpg" data-alt="tab5">
 	    </div>
 	    <div class="testimonial">
 	    <div class="content active" id="tab1">
@@ -318,23 +356,23 @@
 
 	        <div class="carousel-item active"> 
 	               <div class="row">
-	                   <div class="col"><img src="images/f1.jpg" class="img-fluid" alt="1 slide"></div>
-	                   <div class="col"><img src="images/f2.jpg" class="img-fluid" alt="2 slide"></div>
-	                   <div class="col"><img src="images/f3.jpg" class="img-fluid" alt="3 slide"></div>
+	                   <div class="col"><img src="Images/f1.jpg" class="img-fluid" alt="1 slide"></div>
+	                   <div class="col"><img src="Images/f2.jpg" class="img-fluid" alt="2 slide"></div>
+	                   <div class="col"><img src="Images/f3.jpg" class="img-fluid" alt="3 slide"></div>
 	               </div>
 	        </div>
 	        <div class="carousel-item">
 	               <div class="row">
-	                   <div class="col"><img src="images/f5.jpg" class="img-fluid" alt="1 slide"></div>
-	                   <div class="col"><img src="images/f4.jpg" class="img-fluid" alt="2 slide"></div>
-	                   <div class="col"><img src="images/f6.jpg" class="img-fluid" alt="3 slide"></div>
+	                   <div class="col"><img src="Images/f5.jpg" class="img-fluid" alt="1 slide"></div>
+	                   <div class="col"><img src="Images/f4.jpg" class="img-fluid" alt="2 slide"></div>
+	                   <div class="col"><img src="Images/f6.jpg" class="img-fluid" alt="3 slide"></div>
 	               </div>
 	        </div>
 	        <div class="carousel-item">
 	               <div class="row">
-	                   <div class="col"><img src="images/f9.jpg" class="img-fluid" alt="1 slide"></div>
-	                   <div class="col"><img src="images/f7.jpg" class="img-fluid" alt="2 slide"></div>
-	                   <div class="col"><img src="images/f8.jpg" class="img-fluid" alt="3 slide"></div>
+	                   <div class="col"><img src="Images/f9.jpg" class="img-fluid" alt="1 slide"></div>
+	                   <div class="col"><img src="Images/f7.jpg" class="img-fluid" alt="2 slide"></div>
+	                   <div class="col"><img src="Images/f8.jpg" class="img-fluid" alt="3 slide"></div>
 	               </div>
 	        </div>
 	    </div>
@@ -348,22 +386,22 @@
 	    <div><h2>Partners and sponsors</h2>
 	    <div class="preview_control_area">
 	      <div class="data_preview_area">
-	        <div class="data_preview_frame"><img src="images/kfc.jpg" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/jolly.jpg" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/mcd.jpg" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/pepsi.png" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/coca.jpg" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/gc.jpg" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/bk.png" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/subs.jpg" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/brew.png" class="sponsor"></div>
-	        <div class="data_preview_frame"><img src="images/excapade.jpg" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/kfc.jpg" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/jolly.jpg" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/mcd.jpg" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/pepsi.png" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/coca.jpg" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/gc.jpg" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/bk.png" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/subs.jpg" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/brew.png" class="sponsor"></div>
+	        <div class="data_preview_frame"><img src="Images/excapade.jpg" class="sponsor"></div>
 	      </div>
 	    </div>
 	  </div>    	
     </div>
 
-    <div>Copyright &#169; 2022 Visit Brunei</div>
+    <div><footer>Copyright &#169; 2022 Visit Brunei</footer></div>
 </div>
 
 <script type="text/javascript">
