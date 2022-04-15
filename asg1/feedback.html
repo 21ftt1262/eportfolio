@@ -215,11 +215,22 @@
 		color: black;
 	}
 
+	@media screen and (max-width: 479px) {
+	
+	.grid{
+		width: 100vw;
+		height: 100vh;
+		display: grid;
+		grid-template-columns: 100%;
+		padding: 10px;
+	}
+}
 
 	</style>
 </head>
 <body>
 
+<div class="grid">
 	<div class="nav-header">
 		<center><div><img src="Images/logo.png" width="350px"></div></center>
 		<div class="pill-nav navbar">
@@ -370,7 +381,7 @@
 		</div>
 										<div><footer>Copyright © 2022 Visit Brunei</footer></div>
 	</div>
-
+</div>
 
 
 
