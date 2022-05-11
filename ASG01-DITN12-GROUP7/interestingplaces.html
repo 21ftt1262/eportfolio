@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>INTERETING PLACES</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	
+
+	<style type="text/css">
+
+		h1, footer {
+            text-align: center;
+			background-color: #9bc4e2;
+			color: black;
+			padding: 5px;
+			margin: 5px;
+            font-family: monospace;
+		}
+
+    	p {
+            text-align: center;
+        }
+
+        body {
+            background-color: #99badd;
+
+        }
+
+        .navbar {
+            display: grid;
+            grid-template-columns: repeat(5,20%);
+        }
+
+        .nav-header {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            background-color: #4682b4
+        }
+
+        .pill-nav a {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 10px;
+          text-decoration: none;
+          font-size: 16px;
+          border-radius: 5px;
+          background-color: #bcd4e6;
+          margin-left: 15px;
+        }
+
+        .pill-nav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+		.container {
+
+			margin: auto;
+		    margin-top: 20px;    
+		}
+
+		.grid1 {
+
+	      display: grid;
+	      grid-template-rows: auto auto;
+	      border: 1px solid;
+
+        }
+
+	   .imgFilter {
+	    	width: 55%;
+	    	
+	   }
+
+	   .txtFilter {
+	    	text-align: right;
+
+    	}
+
+        .footer {
+            bottom: -5;
+            position: absolute;
+            width: 100%;
+        }
+
+        .search {
+            width: 15%;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+    	@media screen and (max-width: 479px) {
+
+    	   p   {
+    			font-size: 12px;
+    		}
+
+    		h1 {
+    			font-size: 22px;
+    			background-color: #9bc4e2;
+    		}
+
+    		h4 {
+    			font-size: 14px;
+    			text-align: center;
+    		}
+
+    		footer {
+    			background-color: #9bc4e2;
+    		}
+
+            .pill-nav a {
+                margin-left: 10px;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 8px;
+                border-radius: 5px;
+            }
+            .nav-header {
+                height: 100%;
+                width: 215vw;
+                display: grid;
+                grid-template-columns: 45%;
+                grid-template-rows: auto auto;
+            }
+
+            .navbar {
+                display: grid;
+                grid-template-columns: repeat(5, 20%);
+            }
+            
+            .search {
+            width: 30%;
+            }
+
+    		.imgFilter {
+    			width: 65%;
+    		}
+
+    		.txtFilter {
+    			text-align: center;
+    		}
+    	}
+
+	</style>
+</head>
+<body>
+	<div class="nav-header">
+        <center><div><img src="Images/logo.png" width="350px"></div></center>
+        <div class="pill-nav navbar">
+            <a href="home.html">HOME</a>
+            <a href="listofevents.html">LIST OF EVENTS</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="interestingplaces.html">INTERESTING PLACES</a>
+            <a href="feedback.html">FEEDBACK</a>
+        </div>
+    </div>
+
+    <h1>INTERSTING PLACES TO VISIT IN BRUNEI DARUSSALAM</h1> 
+
+<!-- Bootstrap Accordion Feature 3
+Link from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_collapsible_accordion&stacked=h -->
+
+<div class="container mt-3">
+
+	<div id="accordion" class="grid1">
+ 
+  <input class="search" id="myInput" type="text" placeholder="Search..">
+  <br>
+
+  <ul class="list-group" id="myList">
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Temburong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseOne"><center><img src="Images/belalong.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>The Belalong Canopy Walkaway</b></p>
+
+    	<div id="collapseOne" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+         <p>The Belalong Canopy Walkway is considered to by many to be one of Brunei's most majestic locations. Walk across five connected towers with a canopy height of over 43 meters. From up here you can experience a birds eye view of the pristine beauty of Brunei's rainforests, one of the most diverse ecosystems in the world.
+          Its recommended you begin your hike at dawn or dusk, so you can watch the brilliant sun rise or set past the jungle horizon.</p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Brunei Muara</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseTwo"><center><img src="Images/jp.jpeg" class="imgFilter rounded"></center></b>
+    	<p><b>Jerudong Park</b></p>
+
+    	<div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+    	<p>Go on a rollercoaster ride with friends and enjoy a picnic at the garden, or get on a magical boat ride and spend some time with a special someone. Wet your feet and refresh yourself at the water park, or take a whimsical stroll along the park's magnificent landscapes. And make sure to take a picture at the Diamond Monument before you leave!
+
+      	For more information, visit their IG @jerudongpark or visit their website at <a href="https://www.jerudongpark.com/" target="_blank">www.jerudongpark.com</a></p>
+      </div>
+  </div>
+    	
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Temburong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseThree"><center><img src="Images/bridge.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Sultan Haji Omar 'Ali Saifuddien Bridge</b></p>
+
+
+    	<div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Stretching at a remarkable 30km long, Sultan Haji Omar 'Ali Saifuddien Bridge becoming one of the longest bridges in Southeast Asia. The dual-carriageway bridge was opened in March 2020, with the purpose of connecting the Temburong district to the mainland. The cross-district trip brings travellers on a picturesque ride so if you're in the mood to catch sunsets, take a drive on this new bridge.</p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Kuala Belait</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseFour"><center><img src="Images/anduki.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Anduki Recreational Park</b></p>
+
+
+    	<div id="collapseFour" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Opened in 1992 in commemoration of the silver jubilee of Sultan Haji Hassanal Bolkiah, the Anduki Recreational Park serves as the perfect getaway for the public and tourists alike. Set upon a wonderous view of a glittering skyblue lake, the park offers a peaceful place for an afternoon gathering, or excite your day with some radio-controlled boat racing.</p>
+        </div>
+      </div>
+
+    </li>
+    
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Tutong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseFive"><center><img src="Images/tasek.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Tasek Merimbun</b></p>
+
+
+    	<div id="collapseFive" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Tasek Merimbun is the largest natural lake all of Brunei Darussalam, and is designated as one of ASEAN's Heritage Parks. Due to the release of tannin from falling leaves, it's waters glisten with a dark sheen. This, alongside its diverse range of flora and fauna, make for an exciting trip for adventurous wildlife enthusiasts. Many birdwatchers come here to catch sightings of various exotic birds. Its perfect for those who wish to make their next Tutong trip a memorable one.</p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Brunei Muara</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseSix"><center><img src="Images/dermaga.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Dermaga Diraja (The Royal Wharf)</b></p>
+
+
+    	<div id="collapseSix" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>More popularly known as the ‘Waterfront’, the Royal Wharf is situated by one of the Brunei River banks and was recently redeveloped into a scenic promenade that now also leads to the Mahkota Jubli Emas Park. This is a perfect place to enjoy those long strolls at night without ever being too far from some of Brunei’s finest eats (check out <a href="https://www.facebook.com/kaizensushibrunei/" target="_blank">Kaizen Sushi</a>. One of the best viewing spots of Brunei’s heritage site – Kampong Ayer, a historic water village. If you require additional help navigating Brunei, a Tourist Information Centre is just around the corner too.</p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Brunei Muara</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseSeven"><center><img src="Images/dewan.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Dewan Bahasa Dan Pustaka Mural</b></p>
+
+
+    	<div id="collapseSeven" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Commissioned by the 28th Sultan of Brunei, Sultan Haji Omar 'Ali Saifuddien Sa'adul Khairi Waddien, this iconic mural boasts a width of 30 metres. You’ll get a quick snapshot of Brunei’s history and heritage as it features 100 figures performing activities related to traditional Bruneian culture such as songket weaving, fishing and rice planting. Conceptualised by local veteran artist Pengiran Dato Paduka Haji Asmalee bin Pengiran Ahmad in 1963, the mural was completed two years later and it continues to be one of the photographic highlights of Bandar Seri Begawan.
+          </p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Brunei Muara</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseEight"><center><img src="Images/time.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Time Piece Monument</b></p>
+
+
+    	<div id="collapseEight" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>The Time Piece Monument stands in the middle of Bandar Seri Begawan as an important historic landmark. The clock was made as a commemoration for Tuanku Abdul Rahman's visit to Brunei in 1959. He also laid the foundation stone of the clock during that visit. Many refer to the Clock Tower as "Ground Zero", as many use it as reference to measure the distance between the capital and other important places in Brunei.
+          </p>
+        </div>
+      </div>
+
+    </li>
+
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Brunei Muara</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseY"><center><img src="Images/yayasan.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Yayasan Sultan Haji Hassanal Bolkiah</b></p>
+
+
+    	<div id="collapseY" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>First opened in 1996, Yayasan Shopping Complex is one of Brunei’s earliest and longest-standing shopping malls. Considered a tourist attraction for a majority of its existence due to its scenic fountain avenue and its close proximity to other popular sites such as Kampung Air and the Sultan Omar Ali Saifuddien Mosque. Recently, the shopping centre has gone through a few changes but has since reopened its doors with a new line-up of brands, mostly featuring locally made products.
+          </p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Kuala Belait</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseNine"><center><img src="Images/luagan.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Luagan Lalak Recreation Park</b></p>
+
+
+    	<div id="collapseNine" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Find tranquility in The Luagan Lalak Recreation Park. The park is home to an alluvial freshwater swamp known for its mesmerising beauty. The walkways extend out into the center of the swamp, as the mirror-like surface of the water reflects the open sky with all of its majesty. Each visit may be different too, as the water rises and falls with the seasons. In the dryer months, the water gives way to beautiful patches of sedges. It's a great place for dreamy walks and beautiful photos.
+          </p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Kuala Belait</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseTen"><center><img src="Images/billion.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Billionth Barrel Monument</b></p>
+
+
+    	<div id="collapseTen" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Built in 1991, the Billionth Barrel Monument resides along the beach in Seria and is a symbol of achievement in Brunei’s oil production. Commemorating the accomplishment in its name, the iconic structure stands tall and proud for all to see. This landmark is situated on the beach in Seria that boasts of beautiful sunsets and glimpses of oil rigs in the distant horizon.
+          </p>
+        </div>
+      </div>
+
+    </li>
+
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Kuala Belait</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseTwe"><center><img src="Images/seria.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Seria Energy Lab</b></p>
+
+
+    	<div id="collapseTwe" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Check out the Seria Energy Lab, a centre where kids can play and learn! The lab was established to feed the curious young minds and it features multiple exhibitions that’s all about energy. Be sure to see their centrepiece -  the AquaLab, a 70,000 litre cylindrical aquarium tank that holds within a jacket leg with various fish and marine animals.
+          </p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Tutong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseFor"><center><img src="Images/seri.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Seri Kenangan Beach</b></p>
+
+
+    	<div id="collapseFor" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>If you like long walks on the beach, there is no place better than Pantai Seri Kenangan. It sits beside a long spit of land just 5 minutes away from Tutong Town, with the Tutong River on one side, and the South China Sea on the other. It is here where you can feel the sea breeze on your skin, and the warmth of white pristine sands on your feet. Where the gentle tides roll and crash as the flaring hues of the setting sun roll past the horizon. Make some memories here that you won't forget, as Pantai Seri Kenangan's name translates to "Unforgettable Beach".
+          </p>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Kuala Belait</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseThi"><center><img src="Images/teraja.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Teraja Waterfalls</b></p>
+
+
+    	<div id="collapseThi" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>All in its natural glory, the Teraja Waterfalls invite visitors to its pristine pools and wander through its home teeming with unique flora and wildlife. With more than 40 waterfalls the naturescape of Labi, you'll want to grab a tour to get the complete experience! For more details, <a href="https://www.bruneitourism.com/wp-content/uploads/2019/11/explore-labi.pdf" target="_blank">click here</a>. 
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Tutong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseFif"><center><img src="Images/tutongtown.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Tutong Town</b></p>
+
+
+    	<div id="collapseFif" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Settled between the two busiest districts, Tutong Town is the perfect pitstop for travellers looking for a refreshing change of pace. Stop by to take in the view of the Tutong River and enjoy some 'kopi' time at a kopitiam. Try the Rojak and Pulut Panggang which are some of the more popular dishes you can find here. The locals are friendly, and may have as many stories as the buildings around this dainty time-worn town. Just don’t forget to plan where to go next!
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Tutong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseSixth"><center><img src="Images/market.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>The Thursday Market</b></p>
+
+
+    	<div id="collapseSixth" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>The Tutong Thursday market is a treasure trove of bargain worthy handicrafts and local cuisine. A neighbourhood market, it opens from 6am to 12pm on Thursdays and houses all kinds of products from different local vendors. From colourful hand-woven baskets to crispy cucur pisang (banana fritters), spend your morning eating and browsing your way through the market.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Tutong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseSeventh"><center><img src="Images/lamin.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Lamin Warisan</b></p>
+
+
+    	<div id="collapseSeventh" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Once the home of former penghulu mukim Bendahari Haji Ghafar, this vintage spot is now a museum purposed to preserve Tutong's culture and ethnic records. Here visitors can learn about the history of Tanjung Maya township, and discover Tutong's past through age-old photographs and reserved antiquities. Bring back a piece of Tutong culture as you try out fishing with the locals, play traditional games, or catch a cultural dance and showcase.
+
+					For more details, check their Instagram <a href="https://www.instagram.com/laminwarisan/" target="_blank">@laminwarisan</a>
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Temburong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseEighth"><center><img src="Images/bangar.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Bangar Town</b></p>
+
+
+    	<div id="collapseEighth" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Unaffected by the fast-paced routine of city life, Bangar Town is a pleasant pause on the ever-moving tale of our life. A thrilling 45-minute speedboat journey away, Bangar is hidden between thick mangrove forest and its lush greenery of nipa palms. The main draw of this serene town is the Ulu Temburong National Park, where you can explore some of the world’s old skyscrapers in the form of centuries-old botanical towers.
+          </p>
+        </div>
+      </div>
+    </li>
+
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Temburong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseNineth"><center><img src="Images/nationalpark.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Ulu Temburong National Park</b></p>
+
+
+    	<div id="collapseNineth" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Ulu Temburong National Park is home to centuries-old evergreen that has seen the passing of time through the ages. In fact, 80% of Brunei is pure rainforest and home to numerous kinds of wildlife such as the elusive hornbill and over 400 kinds of butterflies. If you’re looking for views for days, the 60m high canopy walk is right up your alley.
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+    	<h4 class="txtFilter">Temburong</h4>
+    	<b class="collapsed card-link" data-toggle="collapse" href="#collapseTe"><center><img src="Images/taman.jpg" class="imgFilter rounded"></center></b>
+    	<p><b>Taman Aie Tenab</b></p>
+
+
+    	<div id="collapseTe" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <p>Take a break at Taman Aie Tenab when you’re in Temburong for a day trip. The name Taman Aie Tenab is made up of words in three Bruneian dialects: Malay, Iban and Murut, and it literally means 'cool water park'. The river has plenty of shade from trees and with a name like that, it's definitely the perfect place to cool off and have a picnic.
+          </p>
+        </div>
+      </div>
+    </li>
+
+
+  </ul>  
+</div>
+</div>
+<div><footer class="footer">Copyright © 2022 Visit Brunei</footer>
+
+<!-- Bootstrap Filter Lists Feature 4 
+Link from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_filters_list&stacked=h -->
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+</script>
+
+
+</body>
+</html>

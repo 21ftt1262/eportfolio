@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LIST OF EVENTS</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for filter symbol -->
+
+	<!-- For filterbucks -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/minty/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="JavaScript/filterbucks.js"></script>
+
+	<!-- For Popover -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+   	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+	<style type="text/css">
+
+		a {
+			color: black;
+		}
+
+		h1, footer {
+			text-align: center;
+			background-color: #9bc4e2;
+			color: black;
+			padding: 5px;
+			margin: 5px;
+			font-family: monospace;
+		}
+
+		.navbar {
+            display: grid;
+            grid-template-columns: repeat(5,20%);
+        }
+
+        .nav-header {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            background-color: #4682b4
+        }
+
+        .pill-nav a {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 10px;
+          text-decoration: none;
+          font-size: 16px;
+          border-radius: 5px;
+          background-color: #bcd4e6;
+          margin-left: 15px;
+        }
+
+        .pill-nav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+		
+		.grid1 {
+			width: 100%;
+			display: grid;
+			grid-column-gap: 2em;
+			grid-template-columns: 3fr 1fr;
+			color: black;	
+		}
+
+		.grid2 {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 10vh;
+			grid-auto-rows: auto;
+			text-align: center;
+			background-color: #99badd;
+		}
+
+		.grid2>div:nth-child(1), .grid2>div:nth-child(2), .grid2>div:nth-child(3) {
+			
+			font-size: 2em;
+			font-style: bold;	
+		}
+
+		.grid2>div {
+			padding: 10px 5px;
+			border: 1px solid white;
+		}
+
+		.grid3 {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 10vh;
+			grid-auto-rows: auto;
+			text-align: center;
+			background-color: #99badd;		
+		}
+
+		.grid3>div:nth-child(1) {
+			font-size: 2em;
+			grid-column: 1 / 3;
+		}
+		.grid3>div {
+			padding: 10px 5px;
+			border: 1px solid white;
+		}
+
+		.footer {
+			bottom: -5;
+			position: absolute;
+			width: 100%;
+		}
+
+		/*MOBILE VIEW*/
+
+		@media screen and (max-width: 479px) {
+
+			h1 {
+    			font-size: 22px;
+    			background-color: #9bc4e2;
+				color: black;
+    		}
+
+    		footer {
+    			background-color: lightblue;
+    		}
+
+			.pill-nav a {
+				display: block;
+				padding: 10px;
+				text-decoration: none;
+				font-size: 8px;
+				border-radius: 5px;
+				background-color: #bcd4e6;
+		  		margin-left: 15px;
+			}
+			.nav-header {
+				height: 100%;
+      	width: 215vw;
+				display: grid;
+				grid-template-columns: 45%;
+				grid-template-rows: auto auto;
+				background-color: #4682b4;
+			}
+
+			.navbar {
+				display: grid;
+				grid-template-columns: repeat(5, 20%);
+			}
+
+    	.grid1 {
+    		width: 100%;
+    		height: auto;
+    		display: grid;
+    		grid-template-columns: 100%;
+    		grid-template-rows: auto auto;
+    		grid-row-gap: 2em;
+
+    	}
+
+    	.grid2>div {
+    		font-size: 8px;
+    		
+    	}
+
+    	.grid2>div:nth-child(1), .grid2>div:nth-child(2), .grid2>div:nth-child(3) {
+    		font-size: 15px !important;
+
+    	}
+
+    	.grid3 {
+    		height: auto;
+    		display: grid;
+    		grid-template-columns: repeat(3, 33.33%);
+    		grid-template-rows: auto auto auto;
+    		grid-row-start: 1;
+    		grid-row-end: 2;
+    	}
+
+    	.grid3>div:nth-child(1) {
+    		grid-column-start: 1;
+    		grid-column-end: 4;
+    		font-size: 20px !important;
+    	}
+
+    	.grid3>div {
+    		font-size: 10px;
+    	}
+
+    	.grid3>div:nth-child(even) {
+    		grid-row-start: 2;
+    		grid-row-end: 3;
+    		}
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="nav-header">
+		<center><div><img src="Images/logo.png" width="350px"></div></center>
+		<div class="pill-nav navbar">
+			<a href="home.html">HOME</a>
+			<a href="listofevents.html">LIST OF EVENTS</a>
+			<a href="gallery.html">GALLERY</a>
+			<a href="interestingplaces.html">INTERSTING PLACES</a>
+			<a href="feedback.html">FEEDBACK</a>
+		</div>
+	</div>
+
+	<h1>LIST OF EVENTS</h1>
+
+	<div class="grid1">
+
+
+	<!-- HEADER FOR CONTENT -->
+
+		<div class="grid2">
+			<div>Event Name</div>
+			<div>Venue</div>
+			<div>&#128336; Date</div>
+
+			<!-- EVENT 1 -->
+
+			<div class="filterbucks Week2 BruneiMuara Outdoor" >
+				<a href="#"  data-toggle="popover" title="Event Description" data-content=" In conjunction with the World Arab Language Day held every Dec 18, UNISSA will be organising an Arab Language festival in collaboration with Saudi Arabia Embassy. Participants from neighbouring Asean countries will be involved in the festival.">Arab Language Festival (Outdoor)</a>
+			</div>
+			<div class="filterbucks Week2 BruneiMuara Outdoor">University Sultan Sharif Ali, Brunei Muara</div>
+			<div class="filterbucks Week2 BruneiMuara Outdoor"><b>Week 2</b>: 18 December 2022 1:30PM - 4:30PM </div>
+
+			<!-- EVENT 2 -->
+
+			<div class="filterbucks Week1 Belait Indoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="Explore Brunei’s history centre in a virtually guided tour from the comforts of your home. View some of the beautiful gallery spaces and learn more about the rich history of Brunei Darussalam.">Virtual History (Indoor)</a>
+			</div>
+			<div class="filterbucks Week1 Belait Indoor">Online Zoom</div>
+			<div class="filterbucks Week1 Belait Indoor"><b>Week 1</b>: 11 November 2022 2:30PM - 3:30PM</div>
+
+			<!-- EVENT 3 -->
+
+			<div class="filterbucks Week3 Temburong Outdoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="Compete in a series of medium to long-distance road races in the Brunei Run 2021. Sweet your way through the 10km Brunei Run, 21km Borneo Run, 42km Brunei Marathon and their third virtual run series – Brooks Run at Home Challenge.">Brooks: Run (Outdoor)</a>	
+			</div>
+			<div class="filterbucks Week3 Temburong Outdoor">Stadium Hassanal Bolkiah, Temburong</div>
+			<div class="filterbucks Week3 Temburong Outdoor"><b>Week 3</b>: 12 November 2022 8:00AM - 12:00PM</div>
+
+			<!-- EVENT 4 -->
+
+			<div class="filterbucks Week2 BruneiMuara Indoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="Learn about Brunei’s culture through a series of quizzers and crossword puzzles designed to test your knowledge of the Abode of Peace and all the unexpected treasures it has to offer.">KNK: Negara Brunei Darussalam (Indoor)</a>	
+			</div>
+			<div class="filterbucks Week2 BruneiMuara Indoor">Times Square, Brunei Muara</div>
+			<div class="filterbucks Week2 BruneiMuara Indoor"><b>Week 2</b>: 13 October 2022 1:30PM - 5:30PM</div>
+
+			<!-- EVENT 5 -->
+
+			<div class="filterbucks Week2 Temburong Indoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="8 teams will be competing in a Chess League competition in a Double Round Robin online match. Sponsored by Mindquest Tuition School and supported by the Brunei Chess Federation and Premier Chess League BN Management, this competition will begin in October and end in December.">Mindquest Online Premier Chess League (Indoor)</a>
+			</div>
+			<div class="filterbucks Week2 Temburong Indoor">The Mall Gadong, Temburong</div>
+			<div class="filterbucks Week2 Temburong Indoor"><b>Week 2</b>: 11 October 2022 10:30PM - 4:30PM</div>
+
+			<!-- EVENT 6 -->
+
+			<div class="filterbucks Week4 BruneiMuara Outdoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="This year’s ultra marathon is a true test endurances as you challenge yourself to a 75-km run. This marathon is held in conjunction with His Majesty Sultan and Yang Di-Pertuan of Brunei Darussalam’s 75th Birthday.">Brunei Kingdom Ultra Marathon (Outdoor)</a>
+			</div>
+			<div class="filterbucks Week4 BruneiMuara Outdoor">Bandar Seri Begawan, Brunei Muara</div>
+			<div class="filterbucks Week4 BruneiMuara Outdoor"><b>Week 4</b>: 20 August 2022 6:00AM - 10:00AM</div>
+
+			<!-- EVENT 7 -->
+
+			<div class="filterbucks Week4 BruneiMuara Outdoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="The ‘Let’s Try Hockey’ virtual clinic is open to all youths interested to learn hockey while at home. Learn the basic activities delivered by a team of coaches.">'Let's Try Hockey' (Outdoor)</a>
+			</div>
+			<div class="filterbucks Week4 BruneiMuara Outdoor">Jerudong Polo Club, Brunei Muara</div>
+			<div class="filterbucks Week4 BruneiMuara Outdoor"><b>Week 4</b>: 15 August 2022 9:00AM - 5:00PM</div>
+
+			<!-- EVENT 8 -->
+
+			<div class="filterbucks Week5 Tutong Outdoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="Tease your mind and take part in an online activity organised by the Museums Department. Do crosswords, puzzles and quizzes, find hidden words and answers to questions related to the museums.">'Rehatkan Minda' (Outdoor)</a>
+			</div>
+			<div class="filterbucks Week5 Tutong Outdoor">Pantai Seri Kenangan, Tutong</div>
+			<div class="filterbucks Week5 Tutong Outdoor"><b>Week 5</b>: 23 April 2022 3:00PM - 6:00PM</div>
+
+			<!-- EVENT 9 -->
+
+			<div class="filterbucks Week1 Tutong Indoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="
+				This will be the first ever eSport tournament held by JPCC in collaboration with Game On. This remote event is open to 13 years old and above with the aim to exploring ways to overcome the limitations of organising such events during COVID-19 restrictions">E-Sports & Game On Competition (Indoor)</a>
+			</div>
+			<div class="filterbucks Week1 Tutong Indoor">Jerudong Park Country Club, Tutong</div>
+			<div class="filterbucks Week1 Tutong Indoor"><b>Week 1</b>: 29 December 2022 8:30AM - 10:30PM</div>
+
+			<!-- EVENT 10 -->
+
+			<div class="filterbucks Week3 Tutong Indoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="BenchLab’s first ever “Inspire and Create” are made for those who are eager to learn more about photography, music, crafts and many more!">Design & Create (Indoor)</a>
+			</div>
+			<div class="filterbucks Week3 Tutong Indoor">Zoom Online</div>
+			<div class="filterbucks Week3 Tutong Indoor"><b>Week 3</b>: 29 December 2022 1:30PM - 3:30PM</div>
+
+			<!-- EVENT 11 -->
+
+			<div class="filterbucks Week1 Tutong Outdoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="Pasar Rakyat Virtual 2021 is an exhibition and selling event of Indonesian products and also products that have Indonesian feel virtually. The event is aimed at helping small and medium enterprises and communities to promote their businesses and connect with local costumers. Pasar Rakyat is a routine event that held annually by the Embassy of the Republic of Indonesia">Pasar Rakyat (Outdoor)</a>
+			</div>
+			<div class="filterbucks Week1 Tutong Outdoor">Pasar Malam, Tutong</div>
+			<div class="filterbucks Week1 Tutong Outdoor"><b>Week 1</b>: 12 December 2022 8:30AM - 10:30PM</div>
+
+			<!-- EVENT 12 -->
+
+			<div class="filterbucks Week5 Temburong Indoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="BenchLab’s first ever “Inspire and Create” are made for those who are eager to learn more about photography, music, crafts and many more!">Inspire & Create (Indoor)</a>
+			</div>
+			<div class="filterbucks Week5 Temburong Indoor">Zoom Online, Temburong</div>
+			<div class="filterbucks Week5 Temburong Indoor"><b>Week 5</b>: 30 December 2022 1:30PM - 3:30PM</div>
+
+			<!-- EVENT 13 -->
+
+			<div class="filterbucks Week5 BruneiMuara Outdoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="The Tiny Lit Fest aims to amplify and celebrate the local literary ecosystem. They will be bringing 16 partner organisations for 18 micro events held over 7 days in December.">DST Carnival (Outdoor)</a>
+			</div>
+			<div class="filterbucks Week5 BruneiMuara Outdoor">DST Headquaters, Brunei Muara</div>
+			<div class="filterbucks Week5 BruneiMuara Outdoor"><b>Week 5</b>: 12 December 2022 8:30AM - 10:30PM</div>
+
+			<!-- EVENT 14 -->
+
+			<div class="filterbucks Week5 Temburong Indoor">
+				<a href="#" data-toggle="popover" title="Event Description" data-content="Diskusi Komik is a gathering of comic enthusiasts in Brunei. Together they encourage creativity, exchange ideas and share experiences as part of a long-running conversation among cartoonists and comic artists since December 6, 2010.">Diskusi Komik (Indoor)</a>
+			</div>
+			<div class="filterbucks Week5 Temburong Indoor">Dewan Bahasa dan Pusaka, Temburong</div>
+			<div class="filterbucks Week5 Temburong Indoor"><b>Week 5</b>: 01 December 2022 10:00AM - 12:30PM</div>
+
+		</div>
+
+		<div class="grid3">
+			<div class="fa">&#xf0b0;  Category Filter</div>
+
+			<div>By Weeks</div>
+			<div>
+					<select class="filter1 form-control test" data-fbdeep="0">
+					<option data-fbflush="true" value="none">
+						Select
+					</option>
+					<option value="Week1">
+						Week 1
+					</option>
+					<option value="Week2">
+						Week 2
+					</option>
+
+					<option value="Week3">
+						Week 3
+					</option>
+					<option value="Week4">
+						Week 4
+					</option>
+
+					<option value="Week5">
+						Week 5
+					</option>
+				</select>
+			</div>
+
+			<div>By Districts</div>
+			<div><select class="filter1 form-control" data-fbdeep="1">
+					<option data-fbflush="true" value="none">
+						Select
+					</option>
+					<option value="BruneiMuara">
+						Brunei Muara
+					</option>
+					<option value="Tutong">
+						Tutong
+					</option>
+					<option value="Temburong">
+						Temburong
+					</option>
+					<option value="Belait">
+						Belait
+					</option>
+					</select>
+			</div>
+			
+			<div>Event Type</div>
+			<div>
+				<select class="filter1 form-control" data-fbdeep="2">
+					<option data-fbflush="true" value="none">
+						Select
+					</option>
+					<option value="Indoor">
+						Indoor
+					</option>
+					<option value="Outdoor">
+						Outdoor
+					</option>
+					</select>
+			</div>
+
+		</div>
+	</div>
+
+		<div class="footer"><footer>Copyright © 2022 Visit Brunei</footer></div>
+
+
+	<!-- JQuery Filterbucks Feature 4 
+	Link from: https://www.jqueryscript.net/demo/user-selection-filter-bucks/ -->
+
+	<script>
+
+	    jQuery(document).ready(function(){
+	        $(".filter1").filterbucks({
+				HideUnrelateds:true,
+			});
+			$(".filter1").on("filterbucks-start",function(){
+				console.log("Start!");
+			});
+			$(".filter1").on("filterbucks-end",function(){
+				console.log("End!");
+			});
+	    });
+	    </script>
+
+
+	  <!-- Bootstrap Popover Feature 2
+	  link from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_ref_js_popover&stacked=h -->
+
+		<script>
+		$(document).ready(function(){
+		  $('[data-toggle="popover"]').popover({
+		  	 placement : 'top',
+		  	 trigger : 'hover',
+		  });   
+
+		});
+		</script>
+</body>
+</html>
