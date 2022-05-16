@@ -72,7 +72,7 @@
 	<div class="nav">nav</div>
 	<div class="grid1">
 		<div><center><img src="image/s2.jpg"></center></div>
-		<div id="msg"><button id="play"><i class="fas fa-play"></i></button><p>The woman is a mound of dirt and rags pushing a squeaky shopping cart; a lump that moves steadily, slowly forward, as if dragged by an invisible tide. Her long, greasy hair hides her face but Ramon feels her staring at him.</p><p>He looks ahead. The best thing to do with the homeless mob littering Vancouver is to ignore it. Give them a buck and the beggars cling to you like barnacles.</p><p>Her voice, sandpaper against his ears, makes him shiver. His heart jolts as though someone has pricked it with a needle. He keeps on walking, but much faster now. It isn’t until he is shoving the milk inside the fridge that he realizes why the woman’s words have upset him: she reminds him of the Llorona.</p>
+		<div id="msg"><button id="play">Read</button><p>The woman is a mound of dirt and rags pushing a squeaky shopping cart; a lump that moves steadily, slowly forward, as if dragged by an invisible tide. Her long, greasy hair hides her face but Ramon feels her staring at him.</p><p>He looks ahead. The best thing to do with the homeless mob littering Vancouver is to ignore it. Give them a buck and the beggars cling to you like barnacles.</p><p>Her voice, sandpaper against his ears, makes him shiver. His heart jolts as though someone has pricked it with a needle. He keeps on walking, but much faster now. It isn’t until he is shoving the milk inside the fridge that he realizes why the woman’s words have upset him: she reminds him of the Llorona.</p>
 		</div>
 		<center><div class="pagination page">
 		  <a href="#">&laquo;</a>
@@ -103,20 +103,20 @@ if ("speechSynthesis" in window) {
     }, 0);
 
     if (speechSynthesis.paused) {
-      play.innerHTML = '<i class="fas fa-pause"></i>';
+      play.innerHTML = 'Pause';
       return speechSynthesis.resume();
     }
 
     if (speechSynthesis.speaking) {
-      play.innerHTML = '<i class="fas fa-play"></i>';
+      play.innerHTML = 'Read';
       return speechSynthesis.pause();
     }
 
     speechSynthesis.speak(msg);
-    play.innerHTML = '<i class="fas fa-pause"></i>';
+    play.innerHTML = 'Pause';
 
     msg.addEventListener("end", (e) => {
-      play.innerHTML = '<i class="fas fa-play"></i>';
+      play.innerHTML = 'Pause';
     });
   });
 } else {
