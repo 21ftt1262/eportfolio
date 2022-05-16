@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Story</title>
+	<style type="text/css">
+
+	.container {
+		display: grid;
+		width: 80%;
+		margin: 0 auto;
+		grid-gap: 1em;
+	}
+
+	.nav {
+    	width: 100%;
+    	display: grid;
+    	grid-template-columns: 100%;
+    	grid-auto-rows: auto;
+    	background-color: #5e7783;
+    }
+
+    .grid1 {
+    	display: grid;
+    	grid-template-columns: 100%;
+    	grid-auto-rows: auto;
+    	background-color: #5e7783;
+    }
+
+    .grid1>div:nth-child(2) {
+    	background-color: #405D65;
+    }
+
+    img[src*="s2"] {
+    	width: 80%;
+    	height: 300px;
+    	padding-top: 10px;
+    }
+
+    /*Pagination*/
+
+	.pagination {
+	  	display: inline-block;
+	  	padding: 8px;
+	}
+
+	.pagination a {
+	  	color: black;
+	  	float: left;
+	  	padding: 8px 16px;
+	  	text-decoration: none;
+	  	transition: background-color .3s;
+	  	border: 1px solid #ddd;
+	  	margin: 0 4px;
+	}
+
+	/*.pagination a.active {
+	  	background-color: #4CAF50;
+	  	color: white;
+	  	border: 1px solid #4CAF50;
+	}*/
+
+	.pagination a:hover:not(.active) {background-color: #ddd;}
+
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<div class="nav">nav</div>
+	<div class="grid1">
+		<div><center><img src="image/s2.jpg"></center></div>
+		<div id="msg"><button id="play"><i class="fas fa-play"></i></button><p>The woman is a mound of dirt and rags pushing a squeaky shopping cart; a lump that moves steadily, slowly forward, as if dragged by an invisible tide. Her long, greasy hair hides her face but Ramon feels her staring at him.</p><p>He looks ahead. The best thing to do with the homeless mob littering Vancouver is to ignore it. Give them a buck and the beggars cling to you like barnacles.</p><p>Her voice, sandpaper against his ears, makes him shiver. His heart jolts as though someone has pricked it with a needle. He keeps on walking, but much faster now. It isn’t until he is shoving the milk inside the fridge that he realizes why the woman’s words have upset him: she reminds him of the Llorona.</p>
+		</div>
+		<center><div class="pagination page">
+		  <a href="#">&laquo;</a>
+		  <a href="#">1</a>
+		  <a href="#" class="active">2</a>
+		  <a href="#">3</a>
+		  <a href="#">&raquo;</a>
+		</div></center>
+	</div>
+</div>
+
+<script type="text/javascript">
+if ("speechSynthesis" in window) {
+  let play = document.getElementById("play");
+
+  play.addEventListener("click", (e) => {
+    let textEl = document.getElementById("msg");
+    let text = textEl.innerText;
+    let msg = new SpeechSynthesisUtterance();
+
+    msg.lang = navigator.language ? navigator.language : "en";
+    msg.rate = 1;
+    msg.text = text;
+
+    // immediately refocus the text element
+    setTimeout(function () {
+      textEl.focus();
+    }, 0);
+
+    if (speechSynthesis.paused) {
+      play.innerHTML = '<i class="fas fa-pause"></i>';
+      return speechSynthesis.resume();
+    }
+
+    if (speechSynthesis.speaking) {
+      play.innerHTML = '<i class="fas fa-play"></i>';
+      return speechSynthesis.pause();
+    }
+
+    speechSynthesis.speak(msg);
+    play.innerHTML = '<i class="fas fa-pause"></i>';
+
+    msg.addEventListener("end", (e) => {
+      play.innerHTML = '<i class="fas fa-play"></i>';
+    });
+  });
+} else {
+  alert("Use a better browser, please (like Firefox or Chrome)");
+}
+</script>
+
+</body>
+</html>
