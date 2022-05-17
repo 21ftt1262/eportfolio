@@ -1,0 +1,61 @@
+<!doctype html>
+  <head>
+    <style>
+      /* CSS comes here */
+      body {
+          font-family:arial;
+      }
+      input {
+          padding: 10px;
+          width: 300px;
+          border-radius: 5px;
+          border: solid 2px #BBB;
+      }
+      div {
+          margin:10px 0px;
+      }
+      button {
+          padding:10px;
+          background-color:#6a67ce;
+          color: #FFFFFF;
+          border: 0px;
+          cursor:pointer;
+          border-radius: 5px;
+      }
+    </style>
+    <title>Pure JavaScript Text to Audio</title>
+  </head>
+  <body>
+      <h2>JavaScript Text to Speech</h2>
+    <div id="text-to-speech">It isn’t until he is shoving the milk inside the fridge that he realizes why the woman’s words have upset him: she reminds him of the Llorona.</div>
+        <div><button type="button" onclick="textToAudio()">Speak</button></div>
+        <br/>
+        <div><small><b>NOTE:</b> Enter text and click on speak button.</small></div>
+    <script>
+      /* JS comes here */
+            function textToAudio() {
+                let msg = document.getElementById("text-to-speech");
+                let text = msg.innerText;
+                
+                let speech = new SpeechSynthesisUtterance();
+                speech.lang = "en-US";
+                
+                speech.text = text;
+                speech.volume = 1;
+                speech.rate = 1;
+                speech.pitch = 1;
+                
+                window.speechSynthesis.speak(speech);
+
+                if (speechSynthesis.paused) {
+                  return speechSynthesis.resume();
+                }
+                
+                if (speechSynthesis.speaking) {
+                  return speechSynthesis.pause();
+                }
+
+              }
+    </script>
+  </body>
+</html>
