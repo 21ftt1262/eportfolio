@@ -11,12 +11,16 @@
     Select Voice: <select id='voiceList'></select> <br><br>
 
     <p id='txtInput'>Her voice, sandpaper against his ears, makes him shiver. His heart jolts as though someone has pricked it with a needle. He keeps on walking, but much faster now. It isn’t until he is shoving the milk inside the fridge that he realizes why the woman’s words have upset him: she reminds him of the Llorona.</p><br>    
-    <button id='btnSpeak'>Read</button>
+    <button id='btnRead'>Read</button>
+    <button id="btnPause">Pause</button>
+    <button id="btnResume">Resume</button>
 
     <script>
         var txtInput = document.querySelector('#txtInput');
         var voiceList = document.querySelector('#voiceList');
-        var btnSpeak = document.querySelector('#btnSpeak');
+        var btnRead = document.querySelector('#btnRead');
+        var btnPause = document.querySelector('#btnPause');
+        var btnResume = document.querySelector('#btnResume');
         var synth = window.speechSynthesis;
         var voices = [];
 
@@ -25,7 +29,7 @@
             speechSynthesis.onvoiceschanged = PopulateVoices;
         }
 
-        btnSpeak.addEventListener('click', ()=> {
+        btnRead.addEventListener('click', ()=> {
             var toSpeak = new SpeechSynthesisUtterance(txtInput.innerHTML);
             var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
             voices.forEach((voice)=>{
@@ -35,6 +39,18 @@
             });
             synth.speak(toSpeak);
         });
+
+        btnPause.addEventListener('click', pause);
+
+        function pause() {
+            speechSynthesis.pause();
+        };
+
+        btnResume.addEventListener('click', resume);
+
+        function resume() {
+            speechSynthesis.resume();
+        };
 
         function PopulateVoices(){
             voices = synth.getVoices();
